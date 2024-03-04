@@ -3,14 +3,18 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'login-page',
+    loadChildren: () => import('./modules/page-login/page-login.module').then( m => m.PageLoginModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'virtual-scroll',
+    loadChildren: () => import('./modules/virtual-scroll/virtual-scroll.module').then( m => m.VirtualScrollModule)
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'login-page',
+  //   pathMatch: 'full'
+  // },
 ];
 
 @NgModule({
