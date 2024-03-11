@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { PageLoginModule } from './modules/page-login/page-login.module';
 import { VirtualScrollModule } from './modules/virtual-scroll/virtual-scroll.module';
+import { SwiperPageModule } from './modules/swiper/swiper.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +17,11 @@ import { VirtualScrollModule } from './modules/virtual-scroll/virtual-scroll.mod
     BrowserModule, 
     PageLoginModule,
     VirtualScrollModule,
+    SwiperPageModule,
     AppRoutingModule,
     IonicModule.forRoot() 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

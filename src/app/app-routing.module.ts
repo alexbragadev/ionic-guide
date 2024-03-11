@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'virtual-scroll',
     loadChildren: () => import('./modules/virtual-scroll/virtual-scroll.module').then( m => m.VirtualScrollModule)
   },
+  {
+    path: 'swiper',
+    loadChildren: () => import('./modules/swiper/swiper.module').then( m => m.SwiperPageModule)
+  },
   // {
   //   path: '',
   //   redirectTo: 'login-page',
