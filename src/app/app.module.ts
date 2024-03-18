@@ -19,7 +19,17 @@ import { SwiperPageModule } from './modules/swiper/swiper.module';
     VirtualScrollModule,
     SwiperPageModule,
     AppRoutingModule,
-    IonicModule.forRoot() 
+    IonicModule.forRoot({
+      platform: {
+        /** The default `desktop` function returns false for devices with a touchscreen.
+        * This is not always wanted, so this function tests the User Agent instead.
+        **/
+        'desktop': (win) => {
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+          return !isMobile;
+        }
+      },
+    }) 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]
